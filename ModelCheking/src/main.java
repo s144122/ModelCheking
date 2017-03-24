@@ -12,5 +12,7 @@ public class main {
 		CTL.CTL();
 		
 		System.out.println(ts);
+		
+		
 	}
 }
