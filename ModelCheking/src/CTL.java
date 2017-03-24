@@ -2,13 +2,15 @@ import java.util.*;
 
 public class CTL
 {
-	public static void main(String[] args)
+/*	public static void main(String[] args)
 	{
 		CTL();
 	}
-
+*/
+	
+	
 	// The funktion that dosomething with the input!
-	public static void CTL() 
+	public void CTL() 
 	{
 		Scanner console = new Scanner(System.in);
 		
