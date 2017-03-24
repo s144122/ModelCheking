@@ -1,2 +1,0 @@
-INDEX VERSION 1.127+C:\Users\Kristian\Desktop\Skole sager\DTU\4. Semester\02141 Datalogisk modellering\Afleveringer\Mandatory2\ModelCheking\.metadata\.plugins\org.eclipse.jdt.core
-4211597676.index
