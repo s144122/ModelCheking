@@ -28,25 +28,30 @@ public class ts{
 
 	public void ctlEX(String s){
 		for(int i = 0;  i < notesOut.size(); i++){
-			if (!notesOut.get(i).string.equals(s)){
-				notesOut.remove(i);
+			
+			if(notesOut.get(i).string.equals(s)){
+				for(int j = 0;  j <= notesOut.size(); j++){
+					
+					if(!note.containsJS(notesOut.get(j).js, notes.get(i).i)){
+						notesOut.remove(j);
+					}	
+				}	
 			}
 		}
 	}
 
 
 	public void ctlAX(String s){
-		for(int i = 0;  i < n1.js.length; i++){
-			if (n1.js[i] == n2.i){
-			}
-			ctlAX(notes.get(n1.js[i]),n2);
+		for(int i = 0;  i < notesOut.size(); i++){
+		
+			
 		}
-	}
-}
+    }
 
-public void ctlEF(String s){
+    public void ctlEF(String s){
+    	
 
-}
+    }
 
 
 

@@ -9,9 +9,13 @@ public class main {
 		ts.add(3, false, new String[] {"c"}, new int[] {3});
 		ts.add(4, false, new String[] {"c"}, new int[] {4});
 		
-		CTL.CTL();
+		//CTL.CTL();
 		
-		System.out.println(ts);
+		System.out.println(ts.notes);
+		
+		ts.ctlEX("v");
+		
+		System.out.println(ts.notesOut);
 		
 		
 	}
