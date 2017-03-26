@@ -1,6 +1,7 @@
 
 public class main {
 
+	@SuppressWarnings("unchecked")
 	public static void main(String[] args){
 		ts ts = new ts();
 		CTL CTL = new CTL();
@@ -11,11 +12,14 @@ public class main {
 		
 		//CTL.CTL();
 		
-		System.out.println(ts.notes);
+		//System.out.println(ts.notes);
 		
-		ts.ctlEX("v");
+		//ts.AP("v");
 		
-		System.out.println(ts.notesOut);
+		System.out.println("");
+		System.out.println("This is output");
+		
+		System.out.println(ts.EF(ts.AP("c"),"c"));
 		
 		
 	}
