@@ -6,9 +6,10 @@ public class main {
 		ts ts = new ts();
 		CTL CTL = new CTL();
 		ts.add(1, true, new String[] {"v"}, new int[] {2});
-		ts.add(2, false, new String[] {"v"}, new int[] {1, 4});
+		ts.add(2, false, new String[] {"v"}, new int[] {5});
 		ts.add(3, false, new String[] {"c"}, new int[] {3});
 		ts.add(4, false, new String[] {"c"}, new int[] {4});
+		ts.add(5, false, new String[] {"v"}, new int[] {1,2,3});
 		
 		//CTL.CTL();
 		
@@ -19,7 +20,7 @@ public class main {
 		System.out.println("");
 		System.out.println("This is output");
 		
-		System.out.println(ts.EF(ts.AP("c"),"c"));
+		System.out.println(ts.AF(ts.AP("v"),"v"));
 		
 		
 	}

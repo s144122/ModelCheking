@@ -113,11 +113,43 @@ public class ts{
 		return listOut;
 	}
 
-	public ArrayList AF(ArrayList<note> list)
+	public boolean AFF(note n, String phi){
+		String s = new String();
+
+		for (int j = 0; j < n.string.length; j++) {
+			s = s + n.string[j];
+			if(!s.equals(phi)){
+				return false;
+
+			}
+			else{
+				for(int i = 0; i < n.js.length; i++){
+					if(notes.get(n.js[i]-1) == n){
+						return true;
+					}
+					EFF(notes.get(n.js[i]-1),phi);
+					
+				}
+			}
+			
+		}
+		return true;
+	}
+	
+	
+	
+	public ArrayList AF(ArrayList<note> list,String phi)
 	{
-		ArrayList<note> noteW = list;
-		  	
-		return noteW;
+		ArrayList<note> listOut = new ArrayList<note>();
+		
+		System.out.println(list);
+		for(int i = 0; i < list.size();i++){
+			if(AFF(list.get(i),phi)){
+				listOut.add(list.get(i));
+			}
+
+		}
+		return listOut;
 	}
 	
 	public ArrayList EG(ArrayList<note> list)
