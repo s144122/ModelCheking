@@ -12,15 +12,6 @@ public class note {
 		this.string = string;
 	}
 	
-	public boolean containsJS(int[] js,int i){
-		for(int j = 0;j <= js.length;j++ ){
-			if(js[j] == i){
-				return true;
-			}
-		}
-		return false;
-	}
-	
 	@Override
 	public String toString(){
 		String s = "("+i+", "+b+", [";

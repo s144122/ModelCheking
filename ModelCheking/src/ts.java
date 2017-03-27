@@ -5,13 +5,11 @@ public class ts{
 	public int noteCount = 0;
 
 	public ArrayList<note> notes = new ArrayList<note>();
-	public ArrayList<note> notesOut = new ArrayList<note>();
 	//public note[] notes = new note[999];
 
 	public void add(int in, boolean bo, String[] strings, int[] jss) {
 		note newNote = new note(in,bo,strings,jss);
 		notes.add(newNote);
-		notesOut.add(newNote);
 	}
 
 
@@ -45,36 +43,68 @@ public class ts{
 		return noteW;
 	}
 
-	public ArrayList EX(ArrayList<note> list)
+	public ArrayList EX(ArrayList<note> list, String s)
 	{
-		ArrayList<note> noteW = list;
-		for(int i = 0;  i <= notesOut.size(); i++)
+		ArrayList<note> listOut = new ArrayList<note>();
+		String s1 = new String();
+		
+		for(int j = 0;  j < list.size(); j++)
 		{
-			for(int j = 0;  j <= list.size(); j++)
+			//IF its already in phi, add to list.
+			if( list.get(j).string[0].equals(s))
 			{
-				if(!note.containsJS(notesOut.get(i).js, list.get(j).i))
-				{
-					noteW.remove(i);
+				listOut.add(list.get(j));
+			}
+			
+			//IF it can move phi in one step, add to list.
+			for(int i = 0; i < notes.size(); i++)
+			{
+				for (int j1 = 0; j1 < list.get(j).string.length; j1++) {
+					
+					s1 = s1 + list.get(j).string[j1];
+					//System.out.println(s1.equals(s));
+					if(s1.equals(s)){
+						listOut.add(list.get(j));
+						
+					}
 				}
+				
 			}
 		}
-		return noteW;
+		
+		return listOut;
 	}
 
-	public ArrayList AX(ArrayList<note> list)
+	public ArrayList AX(ArrayList<note> list, String s)
 	{
-		ArrayList<note> noteW = list;
-		for(int i = 0;  i <= notesOut.size(); i++)
+		ArrayList<note> listOut = new ArrayList<note>();
+		String s1 = new String();
+		
+		for(int j = 0;  j < list.size(); j++)
 		{
-			for(int j = 0;  j <= list.size(); j++)
+			//IF its already in phi, add to list.
+			if( list.get(j).string[0].equals(s))
 			{
-				if(!note.containsJS(notesOut.get(i).js, list.get(j).i))
-				{
-					noteW.remove(i);
+				listOut.add(list.get(j));
+			}
+			
+			//IF it can move phi in one step, add to list.
+			for(int i = 0; i < notes.size(); i++)
+			{
+				for (int j1 = 0; j1 < list.get(j).string.length; j1++) {
+					
+					s1 = s1 + list.get(j).string[j1];
+					//System.out.println(s1.equals(s));
+					if(s1.equals(s)){
+						listOut.add(list.get(j));
+						
+					}
 				}
+				
 			}
 		}
-		return noteW;
+		
+		return listOut;
 	}
 
 
@@ -93,7 +123,6 @@ public class ts{
 						return false;
 					}
 					EFF(notes.get(n.js[i]-1),phi);
-					
 				}
 			}
 		}
@@ -127,60 +156,53 @@ public class ts{
 					if(notes.get(n.js[i]-1) == n){
 						return true;
 					}
-					EFF(notes.get(n.js[i]-1),phi);
-					
+					AFF(notes.get(n.js[j]-1),phi);
 				}
 			}
-			
 		}
-		return true;
+		return false;
 	}
-	
-	
 	
 	public ArrayList AF(ArrayList<note> list,String phi)
 	{
 		ArrayList<note> listOut = new ArrayList<note>();
-		
 		System.out.println(list);
 		for(int i = 0; i < list.size();i++){
 			if(AFF(list.get(i),phi)){
 				listOut.add(list.get(i));
 			}
-
 		}
 		return listOut;
 	}
 	
-	public ArrayList EG(ArrayList<note> list)
+	public ArrayList EG(ArrayList<note> list, String s)
 	{
-		ArrayList<note> noteW = list;
-		for(int i = 0;  i <= notesOut.size(); i++)
-		{
-			for(int j = 0;  j <= list.size(); j++)
+		ArrayList<note> listOut = new ArrayList<note>();
+		String s1 = new String();
+		
+		for(int i = 0;  i < list.size(); i++)
+		{	
+			for(int j = 0; j < list.size(); j++)
 			{
-				if(!note.containsJS(notesOut.get(i).js, list.get(j).i) && !note.containsJS(list.get(j).js , notesOut.get(i).i))
+				if((list.get(i).js[0] == list.get(j).i) && (list.get(j).js[0] == list.get(i).i))
 				{
-					noteW.remove(i);
+					listOut.add(list.get(i));
 				}
 			}
+		
 		}    	
-		return noteW;
+		return listOut;
 	}
 
-	public ArrayList AG(ArrayList<note> list)
+	public ArrayList AG(ArrayList<note> list, String phi)
 	{
-		ArrayList<note> noteW = list;
-		for(int i = 0;  i <= notesOut.size(); i++)
-		{
-			for(int j = 0;  j <= list.size(); j++)
-			{
-				if(!note.containsJS(notesOut.get(i).js, list.get(j).i) && !note.containsJS(list.get(j).js , notesOut.get(i).i))
-				{
-					noteW.remove(i);
-				}
-			}		
+		ArrayList<note> listOut = new ArrayList<note>();
+		System.out.println(list);
+		for(int i = 0; i < list.size();i++){
+			if(AFF(list.get(i),phi)){
+				listOut.add(list.get(i));
+			}
 		}
-		return noteW;
+		return listOut;
 	}
 }
